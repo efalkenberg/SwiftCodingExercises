@@ -45,6 +45,20 @@ class SwiftCodingExercisesTests: XCTestCase {
         XCTAssertFalse(dataStructuresExercise.stringHasUniqueCharactersWithoutAdditionalDataStructure(input: "What??"))
     }
 
+    func testRremoveDuplicateCharsInString() {
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: ""), "")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: " "), " ")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "  "), " ")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "a"), "a")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "aa"), "a")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "aba"), "ab")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "abab"), "ab")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "baaaaaaaaaaaaaaaaaaaaab"), "ba")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "🤔"), "🤔")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "🤔🤔"), "🤔")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "🤔a"), "🤔a")
+        XCTAssertEqual(dataStructuresExercise.removeDuplicateCharsInString(input: "abcdefghijklmnopqrstuvwxyz"), "abcdefghijklmnopqrstuvwxyz")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
